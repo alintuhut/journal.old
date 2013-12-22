@@ -1,0 +1,31 @@
+#page-splash {
+  background: $app-color;
+}
+
+#splash-logo {
+  top: 30%;
+  left: 50%;
+  position: fixed;
+  color: #ffffff;
+  border: emCalc(14px) solid #ffffff;
+  width: emCalc(100px);
+  height: emCalc(100px);
+  display: none;
+  text-align: center;
+  margin-left: emCalc(-50px);
+}
+
+#splash-logo span {
+  font-family: "Fakt Pro Bd", sans-serif;
+  font-size: 4.5em;
+  font-weight: bold;
+  position: absolute;
+  top: -0.1em;
+  right: 0.0625em;
+}
+
+#splash-loader {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+}

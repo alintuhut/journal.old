@@ -1,0 +1,74 @@
+@mixin rounded-corners($radius: 1em) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -khtml-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin hardware-acceleration() {
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+@mixin translate($x, $y, $z : 0) {
+  -moz-transform:translate3D($x, $y, $z);
+  -ms-transform:translate3D($x, $y, $z);
+  -webkit-transform:translate3D($x, $y, $z);
+  -o-transform:translate3D($x, $y, $z);
+  transform:translate3D($x, $y, $z);
+}
+
+@mixin translateX($x) {
+  -moz-transform:translateX($x);
+  -ms-transform:translateX($x);
+  -webkit-transform:translateX($x);
+  -o-transform:translateX($x);
+  transform:translateX($x);
+}
+
+@mixin translateY($y) {
+  -moz-transform:translateY($y);
+  -ms-transform:translateY($y);
+  -webkit-transform:translateY($y);
+  -o-transform:translateY($y);
+  transform:translateY($y);
+}
+
+@mixin translateZ($x) {
+  -moz-transform:translateZ($x);
+  -ms-transform:translateZ($x);
+  -webkit-transform:translateZ($x);
+  -o-transform:translateZ($x);
+  transform:translateZ($x);
+}
+
+
+@mixin transition($val) {
+  -moz-transition: $val;
+  -webkit-transition: $val;
+  -o-transition: $val;
+  transition: $val;
+}
+
+@mixin box-shadow($val) {
+  -webkit-box-shadow: $val;
+  -moz-box-shadow:    $val;
+  box-shadow:         $val;
+}
+
+@mixin animation($val) {
+  -webkit-animation: $val;
+  -moz-animation:    $val;
+  -o-animation:      $val;
+  animation:         $val;
+}
+
+.fast {
+  -webkit-animation-duration: 0.3s !important;
+  -moz-animation-duration: 0.3s !important;
+  -o-animation-duration: 0.3s !important;
+  animation-duration: 0.3s !important;
+}

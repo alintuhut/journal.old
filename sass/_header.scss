@@ -1,0 +1,223 @@
+@-webkit-keyframes menu-select {
+  0%   { @include translateY(2rem); }
+  30%   { @include translateY(3rem); }
+  100% { @include translateY(-15rem); }
+}
+@-moz-keyframes menu-select {
+  0%   { @include translateY(2rem); }
+  30%   { @include translateY(3rem); }
+  100% { @include translateY(-15rem); }
+}
+@-o-keyframes menu-select {
+  0%   { @include translateY(2rem); }
+  30%   { @include translateY(3rem); }
+  100% { @include translateY(-15rem); }
+}
+@keyframes menu-select {
+  0%   { @include translateY(2rem); }
+  30%   { @include translateY(3rem); }
+  100% { @include translateY(-15rem); }
+}
+
+header {
+  position: absolute;
+  background: $app-color;
+  color: #ffffff;
+  width: 100%;
+  height: 2.937rem + 0.063rem;
+  border-bottom: 0.063rem solid $app-color;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  @include transition(all 0.2s ease-in-out);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  //@include hardware-acceleration;
+
+  &.off {
+    @include translateY(-2.7rem);
+  }
+
+  nav {
+
+   display: none;
+   position: absolute;
+   width: 100%;
+
+    &.ontop {
+      z-index: 100;
+    }
+
+    h1 {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      top: 0;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      font-size: 1.45rem;
+      height: 3rem;
+      line-height: 3.3rem;
+      letter-spacing: 0.2rem;
+      z-index: -1;
+      font-family: "Fakt Pro Bd", "Helvetica Neue", Helvetica, Roboto, sans-serif;
+      text-transform: uppercase;
+      -webkit-touch-callout: none;
+      -webkit-tap-highlight-color:rgba(0,0,0,0);
+
+      //text-shadow: 1px 1px 1px darken($app-color, 10%);
+
+      .android & {
+        text-align: left;
+        text-indent: 3.2rem;
+        line-height: 3.2rem;
+      }
+    }
+
+    a:hover,
+    a:visited,
+    a {
+      color: #ffffff;
+      display: block;
+      text-decoration: none;
+      width: 3rem;
+      height: 3rem;
+      -webkit-touch-callout: none;
+      -webkit-tap-highlight-color:rgba(0,0,0,0);
+      //text-shadow: 1px 1px 1px darken($app-color, 10%);
+      position: absolute;
+
+      &#nav-menu {
+        top: 0;
+        left: 0rem;
+        i {
+          padding-top: 0.60rem;
+          padding-left: 0.68rem;
+          font-size: 2rem;
+        }
+      }
+
+      &#nav-add {
+        top: 0;
+        right: 0rem;
+        i {
+          padding-top: 0.64rem;
+          padding-left: 0.73rem;
+          font-size: 2rem;
+        }
+      }
+
+      &#nav-back-add,
+      &#nav-back {
+        top: 0;
+        left: 0rem;
+        i {
+          padding-top: 0.46rem;
+          padding-left: 0.53rem;
+          font-size: 2rem;
+        }
+      }
+
+      &#nav-edit {
+        top: 0;
+        right: 0em;
+        i {
+          padding-top: 0.64rem;
+          padding-left: 0.53rem;
+          font-size: 2rem;
+        }
+      }
+
+      &#nav-delete {
+        top: 0;
+        right: 3rem;
+        i {
+          padding-top: 0.53rem;
+          padding-left: 0.53rem;
+          font-size: 2rem;
+        }
+      }
+
+      &#nav-save {
+        top: 0;
+        right: 0em;
+        i {
+          padding-top: 0.64rem;
+          padding-left: 0.53rem;
+          font-size: 2rem;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+ul#menu {
+  @include translateY(-16rem);
+  position: absolute; top:0; left:0; z-index: 1;
+  width: 100%;
+  background: $menu-background-color;
+  margin: 0; padding: 0;
+  color: #ffffff;
+  font-family: Roboto, "Helvetica Neue", Helvetica, sans-serif;
+  @include transition(all 0.2s ease-out);
+  letter-spacing: 0.07rem;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+
+  &.on {
+    @include translateY(2rem);
+  }
+
+  &.select {
+    @include animation(menu-select 0.5s ease-in-out);
+  }
+
+  padding-top: 1rem;
+
+  .android & {
+    letter-spacing: 0.12rem;
+  }
+
+  li {
+    width: 100%;
+    height: 3rem;
+    line-height: 3.1rem;
+    display: inline-block;
+    border-top: 1px solid $menu-border-color;
+    @include box-shadow(inset 0px 1px 0px rgba(79, 79, 77, 1));
+    text-shadow: 1px 1px 0px $menu-border-color;
+    text-align: center;
+    position: relative;
+    font-size: 1.2rem;
+
+    &:active{
+      background-color: darken($menu-background-color, 7%);
+    }
+
+    .android & {
+      text-align: left;
+      line-height: 3.2rem;
+    }
+
+    i {
+      margin: 0 0.8rem;
+      opacity: .3;
+      position: absolute;
+      top: 1rem;
+      left: 0;
+
+      .android & {
+        position: static;
+      }
+    }
+  }
+
+}
+
+#delete-button {
+  display: none;
+}

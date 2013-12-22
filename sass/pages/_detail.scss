@@ -1,0 +1,13 @@
+#page-detail {
+  background: #ffffff;
+  padding: 2em 2*$spacing;
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  p {
+    font-size: 1.3em;
+  }
+
+}
+

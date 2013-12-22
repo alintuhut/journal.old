@@ -1,0 +1,32 @@
+/*
+* Main application color 1st: header
+*/
+$app-color: #99cc00;
+
+/*
+* Main application color 2nd: header border
+*/
+$app-dark-color: #669900;
+
+/*
+* Body background color
+*/
+$body-color: #f1f1f1; //#e8e8e8; #dddddd - google #e2e2e2 - pinterest #e4e4e4 - twitter
+
+/*
+* Article box background
+*/
+$article-color: #ffffff;
+
+/*
+* Article text color
+*/
+$text-color: #222222;
+
+/*
+* Article time color
+*/
+$text-time-color: lighten($text-color, 50%);
+
+$menu-background-color: #353533;
+$menu-border-color: #1c1c1a;

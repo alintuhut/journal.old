@@ -1,0 +1,90 @@
+#page-timeline {
+  padding: 0 $spacing;
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  /*
+  * Fix clipping issues inside the scrolling section
+  * !!! slows down scrolling
+  */
+  //@include hardware-acceleration;
+}
+
+#list {
+  padding-top: 2.937rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+article {
+  padding: $spacing 0;
+  background: $article-color;
+  margin: $spacing 0;
+  border-bottom: 0.063rem solid darken($body-color, 4%);
+
+  &:first-child {
+    margin-top: $spacing;
+  }
+
+  img {
+    display: block;
+    border: 0;
+    max-width: 100%;
+    margin-bottom: $spacing;
+  }
+
+  p {
+    padding: 0;
+    margin: 0 $spacing;
+    color: $text-color;
+  }
+
+  time {
+    padding: 0;
+    margin: 0 $spacing*1.428571428571429;
+    color: $text-time-color;
+    font-size: 0.7rem;
+  }
+
+  &.img {
+    padding: 0;
+    position: relative;
+    background: none;
+
+    img {
+      margin: 0;
+    }
+
+    time {
+      position: absolute;
+      bottom: $spacing;
+      color: #ffffff;
+    }
+  }
+
+  &.img_text {
+    padding-top: 0;
+  }
+
+  &.selected {
+    background-color: $app-color;
+    time, p {
+      color: #ffffff;
+    }
+  }
+
+}
+
+/**
+* DEBUG AREA
+**/
+
+#scroll {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 3;
+  padding: $spacing;
+  background: #000;
+  color: #fff;
+}
